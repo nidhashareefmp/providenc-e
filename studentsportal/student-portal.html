@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Portal</title>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background-color: #232425;
+      margin: 0;
+      padding: 0;
+    }
+
+    .portal-header {
+      background-color: #3a4c42;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      font-size: 26px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .portal-container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      margin-top: 40px;
+      padding: 20px;
+    }
+
+    .student-details {
+      background-color: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      width: 70%;
+      max-width: 800px;
+      padding: 30px 40px;
+    }
+
+    h3 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 30px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    td {
+      padding: 12px 10px;
+      border-bottom: 1px solid #eee;
+      font-size: 16px;
+    }
+
+    td:first-child {
+      font-weight: 600;
+      color: #333;
+      width: 35%;
+    }
+
+    td:last-child {
+      color: #555;
+      text-align: right;
+    }
+
+    .logout-btn {
+      display: block;
+      margin: 30px auto 0 auto;
+      padding: 12px 30px;
+      background-color: #ff5757;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    .logout-btn:hover {
+      background-color: #ff3b3b;
+    }
+
+
+.result-btn {
+  position: fixed;
+  right: 40px;       /* distance from the right side */
+  bottom: 40px;      /* distance from the bottom */
+  background-color:  #00b3ff;
+  border: none;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 12px 35px;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 102, 255, 0.4);
+  transition: all 0.3s ease;
+  z-index: 1000; /* stays above other elements */
+  text-decoration: none;
+}
+
+.result-btn:hover {
+  background-color: #0099e6;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0, 102, 255, 0.6);
+}
+    
+  </style>
+</head>
+<body>
+  <div class="portal-header">Welcome to Student Portal</div>
+
+  <!-- 🔹 Result Button -->
+    <a href="result.html" class="btn btn-primary mt-4 result-btn">View Result</a>
+  </div>
+
+  <div class="portal-container">
+    <div class="student-details">
+      <h3>Student Profile</h3>
+
+      <table>
+  <tr><td>Admission No:</td><td>PGHS2024-010</td></tr>
+  <tr><td>ID Card No:</td><td>STU2024K001</td></tr>
+  <tr><td>Name of the Student:</td><td>Keerthi S</td></tr>
+  <tr><td>Date of Birth:</td><td>12 March 2008</td></tr>
+  <tr><td>Class:</td><td>9th Grade</td></tr>
+  <tr><td>Class Teacher’s Name:</td><td>Mrs. Priya Nair</td></tr>
+  <tr><td>Father’s Name:</td><td>Suresh Kumar</td></tr>
+  <tr><td>Mother’s Name:</td><td>Latha Suresh</td></tr>
+  <tr><td>Guardian Name:</td><td>Mr. Suresh Kumar</td></tr>
+  <tr><td>Father’s Occupation:</td><td>Engineer</td></tr>
+  <tr><td>Address:</td><td>Rose Villa, Ernakulam, Kerala</td></tr>
+  <tr><td>Phone Number:</td><td>98765 43210</td></tr>
+  <tr><td>Aadhaar Card No:</td><td>4567 1234 8910</td></tr>
+  <tr><td>Blood Group:</td><td>O+</td></tr>
+  <tr><td>Internal Marks:</td><td>89%</td></tr>
+  <tr><td>Attendance:</td><td>96%</td></tr>
+</table>
+
+
+      <button class="logout-btn" onclick="logout()">Logout</button>
+    </div>
+  </div>
+
+
+  <script>
+    function logout() {
+      window.location.href = "login.html";
+    }
+  </script>
+</body>
+</html>
