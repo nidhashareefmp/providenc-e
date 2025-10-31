@@ -8,8 +8,8 @@
 
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-    
+    <link rel="stylesheet" href="../style.css">
+
 
 
 
@@ -76,9 +76,12 @@
                             ABOUT
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
-                            <li><a class="dropdown-item" href="aboutus/ourmission&ourvision.html">Our mission & our vision</a></li>
-                            <li><a class="dropdown-item" href="aboutus/ourHistory.html">Our history</a></li>
-                            <li><a class="dropdown-item" href="aboutus/ourTeam.html">Our team</a></li>
+                            <li><a class="dropdown-item" href="../aboutus/ourmission&ourvision.html">Our mission & our
+                                    vision</a></li>
+                            <li><a class="dropdown-item" href="../aboutus/ourHistory.html">Our history</a></li>
+                            <li><a class="dropdown-item" href="../aboutus/ourTeam.html">Our team</a></li>
+                            <li><a class="dropdown-item" href="../aboutus/prayers.html">Prayers</a></li>
+
                         </ul>
                     </li>
 
@@ -89,9 +92,8 @@
                             SERVICES
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
-                            <li><a class="dropdown-item" href="Services/addmissions.html">Admissions</a></li>
-                            <li><a class="dropdown-item" href="Services/counseling.html">Counseling</a></li>
-                            <li><a class="dropdown-item" href="Services/transport.html">Transport</a></li>
+                            <li><a class="dropdown-item" href="../services/counseling.html">Counseling</a></li>
+                            <li><a class="dropdown-item" href="../services/transport.html">Transport</a></li>
                         </ul>
                     </li>
 
@@ -102,9 +104,9 @@
                             COURSES
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="coursesDropdown">
-                            <li><a class="dropdown-item" href="courses/primary.html">Primary Education</a></li>
-                            <li><a class="dropdown-item" href="courses/second.html">Secondary Education</a></li>
-                            <li><a class="dropdown-item" href="courses/highersec.html">Higher Secondary</a></li>
+                            <li><a class="dropdown-item" href="../courses/primary.html">Primary Education</a></li>
+                            <li><a class="dropdown-item" href="../courses/second.html">Secondary Education</a></li>
+                            <li><a class="dropdown-item" href="../courses/highersec.html">Higher Secondary</a></li>
                         </ul>
                     </li>
                     </li> <!-- CONTACT -->
@@ -121,12 +123,13 @@
                             ADMISSION
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="admissionDropdown">
-                            <li><a class="dropdown-item" href="admisiion/howToApply.html">How to Apply</a></li>
-                            <li><a class="dropdown-item" href="admisiion/feeStructure.html">Fee Structure</a></li>
-                            <li><a class="dropdown-item" href="admisiion/Scholarships.html">Scholarships</a></li>
+                            <li><a class="dropdown-item" href="../admisiion/admissions.html">Admission</a></li>
+                            <li><a class="dropdown-item" href="../admisiion/feeStructure.html">feeStructure</a></li>
+                            <li><a class="dropdown-item" href="../admisiion/examlogin.html">ExamLogin</a></li>
+
                         </ul>
                     </li>
-                    
+
                     <!-- STUDENTS PORTAL -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#portal" id="portalDropdown" role="button"
@@ -134,8 +137,7 @@
                             STUDENTS PORTAL
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="portalDropdown">
-                            <li><a class="dropdown-item" href="studentsportal/login.html">Login</a></li>
-                            <li><a class="dropdown-item" href="studentsportal/result.html">Results</a></li>
+                            <li><a class="dropdown-item" href="../studentsportal/login.html">Login</a></li>
                         </ul>
                     </li>
 
@@ -143,7 +145,7 @@
             </div>
         </div>
     </nav>
-  
+
 
 
 
@@ -152,65 +154,65 @@
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
     <!-- contact -->
-<form id="myForm" onsubmit="return validateForm(event)">
+    <form id="myForm" onsubmit="return validateForm(event)">
 
-    <div class="center-container">
-        <div class="form-wrapper">
-            <div class="form-container">
-                <div class="form-header">
-                    <h2>CONTACT FORM</h2>
+        <div class="center-container">
+            <div class="form-wrapper">
+                <div class="form-container">
+                    <div class="form-header">
+                        <h2>CONTACT FORM</h2>
+                    </div>
+
+                    <form id="myForm" onsubmit="return validateForm(event)">
+                        <div class="name-row">
+                            <div class="name-field">
+                                <label>First Name:</label>
+                                <input type="text" id="firstname" name="firstname">
+                                <span id="firstnameError" class="error"></span>
+                            </div>
+
+                            <div class="name-field">
+                                <label>Last Name:</label>
+                                <input type="text" id="lastname" name="lastname">
+                                <span id="lastnameError" class="error"></span>
+                            </div>
+                        </div>
+
+
+                        <div class="name-fields">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" placeholder="example@gmail.com" required>
+                            <span id="emailError" class="error"></span>
+                        </div><br>
+
+                        <div class="name-fields">
+                            <label>Phone:</label>
+                            <input type="tel" id="phone" required>
+                            <span id="phoneError" class="error"></span>
+                        </div><br>
+
+                        <label for="subject">Subject:</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">-- select --</option>
+                            <option value="admission">Admission Enquiry</option>
+                            <option value="feedback">Feedback</option>
+                            <option value="complaint">Complaint</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <span id="subjectError" class="error"></span>
+                        <br><br>
+
+                        <div class="form-row">
+                            <label for="message">Message:</label>
+                            <textarea id="message" name="message" rows="2" required></textarea>
+                            <span id="messageError" class="error"></span>
+                        </div>
                 </div>
 
-                <form id="myForm" onsubmit="return validateForm(event)">
-                    <div class="name-row">
-                        <div class="name-field">
-                            <label>First Name:</label>
-                            <input type="text" id="firstname" name="firstname">
-                            <span id="firstnameError" class="error"></span>
-                        </div>
-
-                        <div class="name-field">
-                            <label>Last Name:</label>
-                            <input type="text" id="lastname" name="lastname">
-                            <span id="lastnameError" class="error"></span>
-                        </div>
-                    </div>
-
-
-                    <div class="name-fields">
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" placeholder="example@gmail.com" required>
-                        <span id="emailError" class="error"></span>
-                    </div><br>
-
-                    <div class="name-fields">
-                        <label>Phone:</label>
-                        <input type="tel" id="phone" required>
-                        <span id="phoneError" class="error"></span>
-                    </div><br>
-
-                    <label for="subject">Subject:</label>
-                    <select id="subject" name="subject" required>
-                        <option value="">-- select --</option>
-                        <option value="admission">Admission Enquiry</option>
-                        <option value="feedback">Feedback</option>
-                        <option value="complaint">Complaint</option>
-                        <option value="other">Other</option>
-                    </select>
-                    <span id="subjectError" class="error"></span>
-                    <br><br>
-
-                    <div class="form-row">
-                        <label for="message">Message:</label>
-                        <textarea id="message" name="message" rows="2" required></textarea>
-                        <span id="messageError" class="error"></span>
-                    </div>
-            </div>
-
-            <button type="submit" class="submit-btn">SUBMIT</button>
-            <div id="form-status"></div>
-            </form>
-        </div>
+                <button type="submit" class="submit-btn">SUBMIT</button>
+                <div id="form-status"></div>
+    </form>
+    </div>
     </div>
     </div>
 
@@ -269,22 +271,22 @@
 
             // If valid, send via EmailJS
 
-    // initialize emailjs
-    (function (){
-        emailjs.init("6dstiV_-yu9MD2ep3") //public key
-    })();
+            // initialize emailjs
+            (function () {
+                emailjs.init("6dstiV_-yu9MD2ep3") //public key
+            })();
 
-    // handle form submit 
-    document.getElementById("myForm").addEventListener("submit", function(event){
-        event.preventDefault();
+            // handle form submit 
+            document.getElementById("myForm").addEventListener("submit", function (event) {
+                event.preventDefault();
 
-        emailjs.sendForm("service_l14kjlo" , "template_pa6oe0c",this)
-        .then(function(){
-            alert("message send successfully",)
-        },function (error) {
-            alert("failed to send message")
-        })
-    })
+                emailjs.sendForm("service_l14kjlo", "template_pa6oe0c", this)
+                    .then(function () {
+                        alert("message send successfully",)
+                    }, function (error) {
+                        alert("failed to send message")
+                    })
+            })
 
 
             return false;
@@ -341,4 +343,5 @@
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

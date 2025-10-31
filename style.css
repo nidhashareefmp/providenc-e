@@ -13,6 +13,7 @@ html, body {
   padding: 15px 0;
   gap: 15px;                   /* Space between logo and text */
   text-align: left;
+  z-index: 1;
 }
 
 .school-logo {
@@ -69,7 +70,7 @@ html, body {
 
 /* ✅ Navbar (fixed below marquee) */
 .navbar {
-  position: fixed !important;
+  position:sticky !important;
   top: 35px; /* right below announcement bar */
   left: 0;
   width: 100%;

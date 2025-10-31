@@ -60,20 +60,6 @@
       background-color: #f2f7ff;
     }
 
-    .pay-btn {
-      display: inline-block;
-      background: #0077b6;
-      color: white;
-      padding: 10px 18px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: background 0.3s ease;
-    }
-
-    .pay-btn:hover {
-      background: #005b8a;
-    }
 
     footer {
       text-align: center;
@@ -93,9 +79,30 @@
         font-size: 1rem;
       }
     }
+     .back-btn {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color:#004080;
+      color: white;
+      padding: 10px 25px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .back-btn:hover {
+      background-color: #4c565d;
+      transform: translate(-50%, -3px);
+    }
   </style>
 </head>
 <body>
+
+  
 
   <h1>Providence Fee Payment Structure</h1>
 
@@ -107,7 +114,6 @@
           <th>Class / Course</th>
           <th>Annual Fee (₹)</th>
           <th>Term Wise Payment</th>
-          <th>Payment Option</th>
         </tr>
       </thead>
       <tbody>
@@ -116,46 +122,41 @@
           <td>Pre-KG to UKG</td>
           <td>25,000</td>
           <td>3 Terms (₹8,333 each)</td>
-          <td><a href="login.html" class="pay-btn">Pay Now</a></td>
         </tr>
         <tr>
           <td>Providence LP School</td>
           <td>Class 1 - 4</td>
           <td>30,000</td>
           <td>3 Terms (₹10,000 each)</td>
-          <td><a href="login.html" class="pay-btn">Pay Now</a></td>
         </tr>
         <tr>
           <td>Providence UP School</td>
           <td>Class 5 - 7</td>
           <td>35,000</td>
           <td>3 Terms (₹11,667 each)</td>
-          <td><a href="login.html" class="pay-btn">Pay Now</a></td>
         </tr>
         <tr>
           <td>Providence Higher Secondary School</td>
           <td>Class 8 - 12</td>
           <td>45,000</td>
           <td>3 Terms (₹15,000 each)</td>
-          <td><a href="login.html" class="pay-btn">Pay Now</a></td>
         </tr>
         <tr>
           <td>Providence Fashion Designing</td>
           <td>Diploma / Degree</td>
           <td>60,000</td>
           <td>2 Terms (₹30,000 each)</td>
-          <td><a href="login.html" class="pay-btn">Pay Now</a></td>
         </tr>
         <tr>
           <td>Providence College</td>
           <td>UG / PG Courses</td>
           <td>50,000</td>
           <td>2 Terms (₹25,000 each)</td>
-          <td><a href="login.html" class="pay-btn">Pay Now</a></td>
         </tr>
       </tbody>
     </table>
   </div>
+  <a href="../index.html" class="back-btn">← Back to Home</a>
 
   
 </body>

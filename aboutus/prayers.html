@@ -1,29 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Higher Secondary Education</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="../style.css">
-  <link rel="stylesheet" href="../education.css">
-</head>
-<body class="bg-light">
 
-    
-    <!-- 1️⃣ Announcement Bar -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bind Us Together Song</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+
+    <style>
+        body {
+            background-color: #f0f6ff;
+            color: #002b80;
+            font-family: "Poppins", sans-serif;
+        }
+
+        .song-section {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            max-width: 700px;
+            margin: 40px auto;
+        }
+
+        h2 {
+            color: #0b5ed7;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        pre {
+            white-space: pre-wrap;
+            font-size: 1.05rem;
+            line-height: 1.6;
+            color: #003366;
+            display: none;
+            /* hidden initially */
+        }
+
+        button {
+            display: block;
+            margin: 0 auto 20px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+ <!-- 1️⃣ Announcement Bar -->
     <div class="announcement-bar">
         <div class="notice-label">NOTICE BOARD</div>
         <marquee behavior="alternate" direction="left" scrollamount="8">
             🎉 Results are out! | 🏫 Admission to the new batch 2026 has started — Enroll now!
         </marquee>
     </div>
+
     <!-- 2️⃣ School Logo -->
     <div class="school-logo-container">
         <img src="providence2.png" alt="logo" class="school-logo">
         <h1 class="school-name">PROVIDENCE GIRLS HIGHER SECONDARY SCHOOL</h1>
     </div>
-<!-- 3️⃣ Fixed Navbar -->
+
+
+    <!-- 3️⃣ Fixed Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -52,12 +94,12 @@
                             ABOUT
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
-                            <li><a class="dropdown-item" href="../aboutus/ourmission&ourvision.html">Our
-                                    mission & our vision</a></li>
-                            <li><a class="dropdown-item" href="../aboutus/ourHistory.html">Our history</a>
+                            <li><a class="dropdown-item" href="ourmission&ourvision.html">Our mission & our
+                                    vision</a>
                             </li>
-                            <li><a class="dropdown-item" href="../aboutus/ourTeam.html">Our team</a></li>
-                            <li><a class="dropdown-item" href="../aboutus/prayers.html">Prayers</a></li>
+                            <li><a class="dropdown-item" href="ourHistory.html">Our history</a></li>
+                            <li><a class="dropdown-item" href="ourTeam.html">Our team</a></li>
+                            <li><a class="dropdown-item" href="prayers.html">Prayers</a></li>
 
                         </ul>
                     </li>
@@ -69,8 +111,7 @@
                             SERVICES
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
-                            <li><a class="dropdown-item" href="../services/counseling.html">Counseling</a>
-                            </li>
+                            <li><a class="dropdown-item" href="../services/counseling.html">Counseling</a></li>
                             <li><a class="dropdown-item" href="../services/transport.html">Transport</a></li>
                         </ul>
                     </li>
@@ -82,12 +123,9 @@
                             COURSES
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="coursesDropdown">
-                            <li><a class="dropdown-item" href="courses/primary.html">Primary Education</a>
-                            </li>
-                            <li><a class="dropdown-item" href="courses/second.html">Secondary
-                                    Education</a></li>
-                            <li><a class="dropdown-item" href="courses/highersec.html">Higher
-                                    Secondary</a></li>
+                            <li><a class="dropdown-item" href="../courses/primary.html">Primary Education</a></li>
+                            <li><a class="dropdown-item" href="../courses/second.html">Secondary Education</a></li>
+                            <li><a class="dropdown-item" href="../courses/highersec.html">Higher Secondary</a></li>
                         </ul>
                     </li>
                     </li> <!-- CONTACT -->
@@ -104,12 +142,9 @@
                             ADMISSION
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="admissionDropdown">
-                            <li><a class="dropdown-item" href="../admisiion/admissions.html">admission</a>
-                            </li>
+                            <li><a class="dropdown-item" href="../admisiion/admissions.html">Admission</a></li>
                             <li><a class="dropdown-item" href="../admisiion/feeStructure.html">Fee Structure</a></li>
-
-                            <li><a class="dropdown-item" href="../admisiion/examlogin.html">ExamLogin</a></li>
-
+                            <li><a class="dropdown-item" href="../admisiion/feePayment.html">FeePayment</a></li>
                         </ul>
                     </li>
 
@@ -121,7 +156,6 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="portalDropdown">
                             <li><a class="dropdown-item" href="../studentsportal/login.html">Login</a></li>
-
                         </ul>
                     </li>
 
@@ -131,49 +165,243 @@
     </nav>
 
 
-    <div class="education-page">
-  <div class="container py-5">
-    <h1 class="text-center text-primary mb-4">Higher Secondary Education</h1>
-    <p class="lead">
-      Higher Secondary education is the final stage of school learning, typically covering classes 11 and 12. It allows students to choose specific streams according to their interests and future goals, preparing them for university or professional studies.
-    </p>
+    <div class="song-section text-center">
+        <h2>Bind Us Together</h2>
+        <button class="btn btn-primary" onclick="toggleLyrics(this)">Show Lyrics</button>
+        <pre id="lyrics">
+Bind us together, Lord,
+Bind us together,
+With cords that cannot be broken.
+Bind us together, Lord,
+Bind us together,
+Bind us together with love.
 
-    <h3 class="mt-4 text-success">Streams & Subjects</h3>
-    <div class="row">
-      <div class="col-md-4">
-        <h5 class="text-secondary">Science Stream</h5>
-        <ul>
-          <li>Physics</li>
-          <li>Chemistry</li>
-          <li>Biology / Computer Science</li>
-          <li>Mathematics</li>
-          <li>English</li>
-        </ul>
-      </div>
-      <div class="col-md-4">
-        <h5 class="text-secondary">Commerce Stream</h5>
-        <ul>
-          <li>Accountancy</li>
-          <li>Business Studies</li>
-          <li>Economics</li>
-          <li>Computer Application / Mathematics</li>
-          <li>English</li>
-        </ul>
-      </div>
-      <div class="col-md-4">
-        <h5 class="text-secondary">Humanities Stream</h5>
-        <ul>
-          <li>History</li>
-          <li>Political Science</li>
-          <li>Sociology</li>
-          <li>Economics</li>
-          <li>English</li>
-        </ul>
-      </div>
+There is only one God,
+There is only one King,
+There is only one Body,
+That is why we sing.
+
+Bind us together, Lord,
+Bind us together,
+With cords that cannot be broken.
+Bind us together, Lord,
+Bind us together,
+Bind us together with love.
+    </pre>
     </div>
-  </div>
-  </div>
-   <!-- contact -->
+
+    <div class="song-section text-center">
+        <h2>Showers of blessing</h2>
+        <button class="btn btn-primary" onclick="toggleLyrics(this)">Show Lyrics</button>
+        <pre id="lyrics">
+There shall be showers of blessing,
+This is the promise of love;
+There shall be seasons refreshing,
+Sent from the Savior above.
+
+Showers of blessing,
+Showers of blessing we need;
+Mercy drops round us are falling,
+But for the showers we plead.
+
+There shall be showers of blessing,
+Precious reviving again;
+Over the hills and the valleys,
+Sound of abundance of rain.
+
+Showers of blessing,
+Showers of blessing we need;
+Mercy drops round us are falling,
+But for the showers we plead.
+
+There shall be showers of blessing,
+Send them upon us, O Lord;
+Grant to us now a refreshing,
+Come and now honor Thy word.
+
+There shall be showers of blessing,
+O that today they might fall,
+Now as to God we’re confessing,
+Now as on Jesus we call!
+
+Showers of blessing,
+Showers of blessing we need;
+Mercy drops round us are falling,
+But for the showers we plead.
+
+    </pre>
+    </div>
+
+    <div class="song-section text-center">
+        <h2>God Will Make a Way</h2>
+        <button class="btn btn-primary" onclick="toggleLyrics(this)">Show Lyrics</button>
+        <pre id="lyrics">
+God will make a way
+Where there seems to be no way
+He works in ways we cannot see
+He will make a way for me
+He will be my guide
+Hold me closely to His side
+With love and strength for each new day
+He will make a way
+He will make a way
+
+By a roadway in the wilderness, He’ll lead me
+And rivers in the desert will I see
+Heaven and earth will fade
+But His Word will still remain
+And He will do something new today
+
+God will make a way
+Where there seems to be no way
+He works in ways we cannot see
+He will make a way for me
+He will be my guide
+Hold me closely to His side
+With love and strength for each new day
+He will make a way
+He will make a way
+    </pre>
+    </div>
+
+    <div class="song-section text-center">
+        <h2>All Thing Bright and Beautiful</h2>
+        <button class="btn btn-primary" onclick="toggleLyrics(this)">Show Lyrics</button>
+        <pre id="lyrics">
+All things bright and beautiful,
+All creatures great and small,
+All things wise and wonderful,
+The Lord God made them all.
+
+Each little flower that opens,
+Each little bird that sings,
+He made their glowing colours,
+He made their tiny wings.
+
+All things bright and beautiful,
+All creatures great and small,
+All things wise and wonderful,
+The Lord God made them all.
+
+The purple-headed mountain,
+The river running by,
+The sunset and the morning,
+That brightens up the sky.
+
+
+The cold wind in the winter,
+The pleasant summer sun,
+The ripe fruits in the garden,
+He made them every one.
+
+
+He gave us eyes to see them,
+And lips that we might tell,
+How great is God Almighty,
+Who has made all things well.
+    </pre>
+    </div>
+
+    <div class="song-section text-center">
+        <h2>We Shall Overcome</h2>
+        <button class="btn btn-primary" onclick="toggleLyrics(this)">Show Lyrics</button>
+        <pre id="lyrics">
+We shall overcome,
+We shall overcome,
+We shall overcome someday;
+Oh, deep in my heart,
+I do believe,
+We shall overcome someday.
+
+We'll walk hand in hand,
+We'll walk hand in hand,
+We'll walk hand in hand someday;
+Oh, deep in my heart,
+I do believe,
+We shall overcome someday.
+
+We shall live in peace,
+We shall live in peace,
+We shall live in peace someday;
+Oh, deep in my heart,
+I do believe,
+We shall overcome someday.
+
+We are not afraid,
+We are not afraid,
+We are not afraid today;
+Oh, deep in my heart,
+I do believe,
+We shall overcome someday.
+
+The truth shall make us free,
+The truth shall make us free,
+The truth shall make us free someday;
+Oh, deep in my heart,
+I do believe,
+We shall overcome someday.
+
+We shall overcome,
+We shall overcome,
+We shall overcome someday;
+Oh, deep in my heart,
+I do believe,
+We shall overcome someday.
+    </pre>
+    </div>
+
+    <div class="song-section text-center">
+        <h2>Thank You,Lord</h2>
+        <button class="btn btn-primary" onclick="toggleLyrics(this)">Show Lyrics</button>
+        <pre id="lyrics">
+Thank You, Lord, for all You’ve done,
+Thank You, Lord, for the gift of Your Son;
+Thank You, Lord, for making me whole,
+Thank You, Lord, for giving my soul.
+
+Thank You, Lord, for the strength You give,
+To simply carry on through life I live;
+Thank You, Lord, for the love that’s true,
+And thank You, Lord, for being You.
+
+Thank You, Lord, for the joy You bring,
+Thank You, Lord, for the song I sing;
+Thank You, Lord, for everything,
+Thank You, Lord, my King of kings.
+
+Short School Version (Often Sung in Assemblies):
+Thank You, Lord, for this new day,
+Thank You, Lord, for showing the way;
+Thank You, Lord, for the love You give,
+Thank You, Lord, for this life I live.
+    </pre>
+    </div>
+
+    <div class="song-section text-center">
+        <h2>Queen Of PRovidence</h2>
+        <button class="btn btn-primary" onclick="toggleLyrics(this)">Show Lyrics</button>
+        <pre id="lyrics">
+
+    </pre>
+    </div>
+
+
+
+  <script>
+function toggleLyrics(button) {
+    const lyrics = button.nextElementSibling; // gets the <pre> right after the button
+    if (lyrics.style.display === "none" || lyrics.style.display === "") {
+        lyrics.style.display = "block";
+        button.textContent = "Hide Lyrics";
+    } else {
+        lyrics.style.display = "none";
+        button.textContent = "Show Lyrics";
+    }
+}
+</script>
+
+
+    <!-- contact -->
     <form id="myForm" onsubmit="return validateForm(event)">
 
         <div class="center-container">
@@ -317,10 +545,6 @@
     <!-- Success message -->
     <p id="form-status" class="mt-3"></p>
 
-
-
-
-
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-container">
@@ -362,5 +586,8 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
 </body>
+
 </html>

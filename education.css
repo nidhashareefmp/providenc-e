@@ -1,0 +1,111 @@
+/* -----------------------------------
+   Education Page - Common Styling
+----------------------------------- */
+.education-page {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f5f7fa;
+  color: #333;
+  padding: 60px 0;
+}
+
+/* Content Container */
+.education-page .container {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 50px 60px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  max-width: 1000px;
+}
+
+.education-page .container:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* Headings */
+.education-page h1 {
+  color: #004aad;
+  font-weight: 700;
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 15px;
+}
+
+.education-page h3 {
+  color: #007b83;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-top: 35px;
+  margin-bottom: 15px;
+}
+
+.education-page h5 {
+  color: #004aad;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* Paragraph */
+.education-page p {
+  line-height: 1.8;
+  font-size: 1rem;
+  color: #444;
+  text-align: justify;
+  margin-bottom: 20px;
+}
+
+/* Lists (Subjects & Streams) */
+.education-page ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 10px;
+}
+
+.education-page ul li {
+  background: #f1f5fb;
+  margin: 8px 0;
+  padding: 10px 15px;
+  border-left: 4px solid #004aad;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.education-page ul li:hover {
+  background: #e8efff;
+  transform: translateX(5px);
+}
+
+/* Stream Boxes Layout */
+.education-page .row {
+  margin-top: 20px;
+}
+
+.education-page .col-md-4 {
+  background: #fdfdfd;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+  transition: 0.3s ease;
+}
+
+.education-page .col-md-4:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .education-page .container {
+    padding: 30px 25px;
+  }
+  .education-page h1 {
+    font-size: 1.8rem;
+  }
+  .education-page .col-md-4 {
+    margin-bottom: 20px;
+  }
+}

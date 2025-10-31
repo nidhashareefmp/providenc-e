@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exam Fee Payment | Providence School</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #c2f0f7, #8fd3f4);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .payment-container {
+      background: #fff;
+      padding: 35px;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+      width: 450px;
+    }
+
+    .payment-container h3 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #004aad;
+    }
+
+    .btn-primary {
+      background-color: #004aad;
+      border: none;
+    }
+
+    .btn-primary:hover {
+      background-color: #022e6f;
+    }
+    .back-btn {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: grey;
+      color: white;
+      padding: 10px 25px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    .back-btn:hover {
+      background-color:rgba(128, 128, 128, 0.345);
+      transform: translate(-50%, -3px);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="payment-container">
+    <h3>Exam Fee Payment</h3>
+    <div id="examStudentInfo" class="mb-4"></div>
+
+    <form id="examPaymentForm">
+      <div class="mb-3">
+        <label class="form-label">Exam Fee Amount (₹)</label>
+        <input type="text" class="form-control" id="examAmount" readonly>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Select Payment Method</label>
+        <select class="form-select" id="examPaymentMethod" required>
+          <option value="">Select</option>
+          <option value="Debit Card">Debit Card</option>
+          <option value="UPI">UPI</option>
+        </select>
+      </div>
+
+      <div id="examCardSection" style="display:none;">
+        <div class="mb-3">
+          <label class="form-label">Card Number</label>
+          <input type="text" class="form-control" id="examCardNumber" maxlength="16" placeholder="Enter 16-digit card number">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Expiry Date</label>
+          <input type="month" class="form-control" id="examExpiryDate">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">CVV</label>
+          <input type="password" class="form-control" id="examCvv" maxlength="3" placeholder="CVV">
+        </div>
+      </div>
+
+      <div id="examUpiSection" style="display:none;">
+        <div class="mb-3">
+          <label class="form-label">UPI ID</label>
+          <input type="text" class="form-control" id="examUpiId" placeholder="example@upi">
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary w-100 mt-3">Pay Exam Fee</button>
+    </form>
+  </div>
+
+  <script>
+    (function() {
+      emailjs.init("6dstiV_-yu9MD2ep3"); // Replace with your EmailJS public key
+    })();
+
+    const examUserId = localStorage.getItem("examLoggedInUser");
+    const student = JSON.parse(localStorage.getItem(examUserId));
+
+    if (!student) {
+      alert("Please login first!");
+      window.location.href = "examLogin.html";
+    } else {
+      document.getElementById("examStudentInfo").innerHTML = `
+        <p><strong>Application ID:</strong> ${student.id}</p>
+        <p><strong>Name:</strong> ${student.name}</p>
+        <p><strong>Course:</strong> ${student.course}</p>
+        <p><strong>Exam Fee Pending:</strong> ₹${student.examFee || 500}</p>
+      `;
+      document.getElementById("examAmount").value = student.examFee || 500;
+    }
+
+    document.getElementById("examPaymentMethod").addEventListener("change", function() {
+      const method = this.value;
+      document.getElementById("examCardSection").style.display = (method === "Debit Card") ? "block" : "none";
+      document.getElementById("examUpiSection").style.display = (method === "UPI") ? "block" : "none";
+    });
+
+    document.getElementById("examPaymentForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const method = document.getElementById("examPaymentMethod").value;
+      const amount = document.getElementById("examAmount").value;
+
+      if (!method) {
+        alert("Please select a payment method.");
+        return;
+      }
+
+      // Send Email via EmailJS
+      emailjs.send("service_l14kjlo", "template_pa6oe0c", {
+        student_name: student.name,
+        application_id: student.id,
+        course: student.course,
+        payment_method: method,
+        amount: amount,
+        message: `Exam Fee Payment successful for ${student.name} (${student.id}).`
+      })
+      .then(() => {
+        alert(`✅ Exam Fee Paid Successfully!\n\nStudent: ${student.name}\nCourse: ${student.course}\nAmount: ₹${amount}\nMethod: ${method}\n\nConfirmation sent to your mail.`);
+        localStorage.removeItem("examLoggedInUser");
+        window.location.href = "../index.html";
+      })
+      .catch(error => {
+        alert("⚠️ Payment completed, but email failed to send.");
+        console.error("EmailJS Error:", error);
+      });
+    });
+    
+  </script>
+
+    <a href="../index.html" class="back-btn">← Back to Home</a>
+
+</body>
+</html>

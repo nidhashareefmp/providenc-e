@@ -70,21 +70,22 @@
     }
 
     .logout-btn {
-      display: block;
-      margin: 30px auto 0 auto;
-      padding: 12px 30px;
-      background-color: #ff5757;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 16px;
-      transition: 0.3s;
-    }
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  background-color: #ff5757;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+}
 
-    .logout-btn:hover {
-      background-color: #ff3b3b;
-    }
+.logout-btn:hover {
+  background-color: #ff3b3b;
+}
 
 
 .result-btn {
@@ -113,6 +114,8 @@
 </head>
 <body>
   <div class="portal-header">Welcome to Student Portal</div>
+      <button class="logout-btn" onclick="logout()">Logout</button>
+
 
   <!-- 🔹 Result Button -->
     <a href="result.html" class="btn btn-primary mt-4 result-btn">View Result</a>
@@ -142,7 +145,6 @@
 </table>
 
 
-      <button class="logout-btn" onclick="logout()">Logout</button>
     </div>
   </div>
 
