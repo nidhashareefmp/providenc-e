@@ -5,63 +5,114 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Student Login</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
       font-family: "Poppins", sans-serif;
-      background: linear-gradient(135deg, #2be7e7, #1bccc6);
+      background: url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
       height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
+      backdrop-filter: blur(4px);
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.45);
+      z-index: 1;
     }
 
     .login-container {
-      background-color: white;
-      padding: 40px;
+      position: relative;
+      z-index: 2;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
       border-radius: 20px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-      width: 350px;
+      padding: 40px 35px;
+      width: 340px;
       text-align: center;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+      color: #fff;
     }
 
-    h2 {
+    .login-container h2 {
+      font-weight: 600;
+      font-size: 24px;
       margin-bottom: 25px;
-      color: #333;
+      color: #ffffff;
+      letter-spacing: 0.5px;
     }
 
-    input[type="text"],
-    input[type="password"] {
+    .input-group {
+      position: relative;
+      margin-bottom: 20px;
+    }
+
+    .input-group input {
       width: 100%;
-      padding: 12px;
-      margin: 10px 0;
-      border: 1px solid #ccc;
+      padding: 12px 40px 12px 15px;
+      border: none;
       border-radius: 10px;
-      font-size: 16px;
+      background: rgba(255, 255, 255, 0.2);
+      color: #fff;
+      font-size: 15px;
+      outline: none;
+      transition: background 0.3s;
+    }
+
+    .input-group input::placeholder {
+      color: #e3e3e3;
+    }
+
+    .input-group i {
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #ddd;
+    }
+
+    .input-group input:focus {
+      background: rgba(255, 255, 255, 0.3);
     }
 
     button {
       width: 100%;
       padding: 12px;
       border: none;
-      background-color: #1bc5d4b9;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #0abde3, #10ac84);
       color: white;
       font-size: 16px;
-      border-radius: 10px;
+      font-weight: 600;
       cursor: pointer;
-      transition: 0.3s;
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
     }
 
     button:hover {
-      background-color: #0c0d0e;
-      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
     }
 
     .error {
-      color: red;
-      margin-top: 10px;
+      color: #ffbaba;
       font-size: 14px;
+      margin-top: 10px;
+      min-height: 18px;
     }
 
     .back-btn {
@@ -69,35 +120,53 @@
       bottom: 20px;
       left: 50%;
       transform: translateX(-50%);
-      background-color: #18d5e3;
-      color: white;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(8px);
+      color: #fff;
       padding: 10px 25px;
       border-radius: 8px;
       text-decoration: none;
-      font-weight: 600;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-      transition: background-color 0.3s ease, transform 0.2s ease;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      transition: all 0.3s ease;
+      z-index: 2;
     }
 
     .back-btn:hover {
-      background-color: #02487a;
+      background: rgba(255, 255, 255, 0.35);
       transform: translate(-50%, -3px);
+    }
+
+    @media (max-width: 400px) {
+      .login-container {
+        width: 90%;
+        padding: 30px 25px;
+      }
     }
   </style>
 </head>
 
 <body>
+  <div class="overlay"></div>
+
   <div class="login-container">
-    <h2>STUDENT LOGIN</h2>
+    <h2><i class="fa-solid fa-user-graduate"></i> STUDENT LOGIN</h2>
     <form id="loginForm">
-      <input type="text" id="username" placeholder="Application ID (e.g., STU033)" required />
-      <input type="password" id="password" placeholder="Password" required />
+      <div class="input-group">
+        <input type="text" id="username" placeholder="Application ID (e.g., STU033)" required />
+        <i class="fa-solid fa-id-card"></i>
+      </div>
+      <div class="input-group">
+        <input type="password" id="password" placeholder="Password" required />
+        <i class="fa-solid fa-lock"></i>
+      </div>
       <button type="submit">Login</button>
       <div id="errorMsg" class="error"></div>
     </form>
   </div>
 
-  <a href="../index.html" class="back-btn">← Back to Home</a>
+  <a href="../index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
 
   <script>
     document.getElementById("loginForm").addEventListener("submit", function (e) {
@@ -112,18 +181,17 @@
         return;
       }
 
-      // Get student data from localStorage (saved during admission)
       const studentData = JSON.parse(localStorage.getItem(username));
 
       if (studentData && studentData.password === password) {
-        // Save session info
         localStorage.setItem("loggedInUser", username);
         alert("Login successful!");
-        window.location.href = "feePayment.html"; // Redirect to next page
+        window.location.href = "feePayment.html";
       } else {
         errorMsg.textContent = "Invalid Application ID or Password.";
       }
     });
   </script>
 </body>
+
 </html>

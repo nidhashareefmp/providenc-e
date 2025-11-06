@@ -9,25 +9,55 @@
   <style>
     body {
       font-family: "Poppins", sans-serif;
-      background: linear-gradient(135deg, #5de0e6, #004aad);
+      margin: 0;
+      padding: 0;
       height: 100vh;
+      background: url("https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1920&q=80") 
+        no-repeat center center/cover;
       display: flex;
       justify-content: center;
       align-items: center;
+      overflow: hidden;
     }
 
+    /* Overlay to make background more readable */
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 0;
+    }
+
+    /* Glass effect container */
     .login-container {
-      background-color: white;
-      padding: 40px;
+      position: relative;
+      z-index: 1;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
       border-radius: 20px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      padding: 40px;
       width: 350px;
       text-align: center;
+      box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3);
+      color: white;
+      animation: fadeIn 1.2s ease;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     h2 {
-      margin-bottom: 25px;
-      color: #004aad;
+      color: #fff;
+      font-weight: 600;
+      margin-bottom: 20px;
     }
 
     input[type="text"],
@@ -35,16 +65,21 @@
       width: 100%;
       padding: 12px;
       margin: 10px 0;
-      border: 1px solid #ccc;
+      border: none;
       border-radius: 10px;
+      outline: none;
       font-size: 16px;
+    }
+
+    input::placeholder {
+      color: #777;
     }
 
     button {
       width: 100%;
       padding: 12px;
       border: none;
-      background-color: #004aad;
+      background: #004aad;
       color: white;
       font-size: 16px;
       border-radius: 10px;
@@ -53,53 +88,97 @@
     }
 
     button:hover {
-      background-color: #022e6f;
+      background: #022e6f;
     }
 
     .error {
-      color: red;
-      margin-top: 10px;
+      color: #ffb3b3;
       font-size: 14px;
+      margin-top: 10px;
+    }
+
+    /* Dynamic greeting */
+    .greeting {
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: #fff;
+      font-weight: 500;
     }
   </style>
 </head>
 
 <body>
+  <div class="overlay"></div>
+
   <div class="login-container">
+    <div class="greeting" id="greeting"></div>
     <h2>Exam Fee Login</h2>
     <form id="examLoginForm" onsubmit="return examLogin(event)">
-      <input type="text" id="examUserId" placeholder="Application ID (e.g., STU033)" required />
-      <input type="password" id="examPassword" placeholder="Password" required />
+      <input type="text" id="examUserId" placeholder="Application ID (e.g., STU033)"  />
+      <input type="password" id="examPassword" placeholder="Password"  />
       <button type="submit">Login</button>
       <div id="examError" class="error"></div>
     </form>
   </div>
 
   <script>
+    // 🌅 Dynamic Greeting based on time
+    function showGreeting() {
+      const greeting = document.getElementById("greeting");
+      const hour = new Date().getHours();
+      if (hour < 12) greeting.textContent = "🌤️ Good Morning!";
+      else if (hour < 18) greeting.textContent = "🌞 Good Afternoon!";
+      else greeting.textContent = "🌙 Good Evening!";
+    }
+
+    showGreeting();
+
+    // 🔒 Login validation
     function examLogin(event) {
       event.preventDefault();
+
       const userId = document.getElementById("examUserId").value.trim();
       const password = document.getElementById("examPassword").value.trim();
       const errorMsg = document.getElementById("examError");
+      errorMsg.textContent = "";
 
+      // Empty check
+      if (userId === "" || password === "") {
+        errorMsg.textContent = "Please fill in all fields.";
+        return false;
+      }
+
+      // ID pattern check
+      const idPattern = /^STU\d{3,}$/i;
+      if (!idPattern.test(userId)) {
+        errorMsg.textContent = "Invalid Application ID format. Example: STU001";
+        return false;
+      }
+
+      // Password length check
+      if (password.length < 4) {
+        errorMsg.textContent = "Password must be at least 4 characters long.";
+        return false;
+      }
+
+      // Check user existence
       const storedUser = JSON.parse(localStorage.getItem(userId));
-
       if (!storedUser) {
         errorMsg.textContent = "User not found. Please register first.";
         return false;
       }
 
+      // Password match
       if (storedUser.password !== password) {
         errorMsg.textContent = "Incorrect password!";
         return false;
       }
 
-      // Save login session
+      // Success login
       localStorage.setItem("examLoggedInUser", userId);
+      alert("Login successful!");
       window.location.href = "examFeePayment.html";
     }
   </script>
-
-  
 </body>
 </html>

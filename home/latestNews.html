@@ -46,105 +46,12 @@
     </div>
 
 
-    <!-- 3️⃣ Fixed Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav">
-                    <!-- home -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#home" id="homeDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            HOME
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="homeDropdown">
-                            <li><a class="dropdown-item" href="overview.html">Overview</a></li>
-                            <li><a class="dropdown-item" href="ourschemes.html">Our schemes</a></li>
-                            <li><a class="dropdown-item" href="latestNews.html">Latest News</a></li>
-                        </ul>
-                    </li>
-
-                    <!-- about -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#about" id="aboutDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            ABOUT
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
-                            <li><a class="dropdown-item" href="../aboutus/ourmission&ourvision.html">Our mission & our
-                                    vision</a></li>
-                            <li><a class="dropdown-item" href="../aboutus/ourHistory.html">Our history</a></li>
-                            <li><a class="dropdown-item" href="../aboutus/ourTeam.html">Our team</a></li>
-                            <li><a class="dropdown-item" href="../aboutus/prayers.html"> Prayers</a></li>
-
-                        </ul>
-                    </li>
-
-                    <!-- services -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#services" id="servicesDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            SERVICES
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
-                            <li><a class="dropdown-item" href="../services/counseling.html">Counseling</a></li>
-                            <li><a class="dropdown-item" href="../services/transport.html">Transport</a></li>
-                        </ul>
-                    </li>
-
-                    <!-- COURSES -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#courses" id="coursesDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            COURSES
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="coursesDropdown">
-                            <li><a class="dropdown-item" href="../courses/primary.html">Primary Education</a></li>
-                            <li><a class="dropdown-item" href="../courses/second.html">Secondary Education</a></li>
-                            <li><a class="dropdown-item" href="../courses/highersec.html">Higher Secondary</a></li>
-                        </ul>
-                    </li>
-                    </li> <!-- CONTACT -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link " href="contact.html">
-                            CONTACT
-                        </a>
-                    </li>
-
-                    <!-- ADMISSION -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#admission" id="admissionDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            ADMISSION
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="admissionDropdown">
-                            <li><a class="dropdown-item" href="../admisiion/admissions.html">admission</a></li>
-                            <li><a class="dropdown-item" href="../admisiion/feeStructure.html">Fee Structure</a></li>
-                            <li><a class="dropdown-item" href="../admisiion/examlogin.html">ExamLogin</a></li>
-
-                        </ul>
-                    </li>
-
-                    <!-- STUDENTS PORTAL -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#portal" id="portalDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            STUDENTS PORTAL
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="portalDropdown">
-                            <li><a class="dropdown-item" href="../studentsportal/login.html">Login</a></li>
-                        </ul>
-                    </li>
-
-                </ul>
-            </div>
-        </div>
-    </nav>
-
+    <div id="navbar-placeholder"></div>
+<script>
+  fetch("../navbar.html")
+    .then(res => res.text())
+    .then(data => document.getElementById("navbar-placeholder").innerHTML = data);
+</script>
 
 
     <!-- latest news -->
