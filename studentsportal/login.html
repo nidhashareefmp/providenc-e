@@ -1,38 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Student Login</title>
+  <title>Student Login - Providence School</title>
+
   <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="../style.css">
-
-
 
   <style>
+    /* 🌿 General Styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
       font-family: "Poppins", sans-serif;
-      background: linear-gradient(135deg, #3c7649, #376f2e);
       height: 100vh;
+      background: url("schoollogin.jpeg") no-repeat center center/cover; /* replace with your image */
       display: flex;
-      justify-content: center;
       align-items: center;
+      justify-content: space-between;
+      padding: 50px;
+      color: #004d88;
     }
 
+    /* 📞 Left Info Panel */
+    .info-panel {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 20px;
+      padding-left: 50px;
+      max-width: 40%;
+      backdrop-filter: blur(5px);
+    }
+
+    .info-panel h2 {
+      font-size: 30px;
+      margin-bottom: 10px;
+      color: #610707;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .info-item {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      font-size: 16px;
+    }
+
+    .info-item i {
+      font-size: 20px;
+      color: #ffd700;
+    }
+
+    a {
+      color: #004d88;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* 🔐 Login Box */
     .login-container {
-      background-color: white;
+      flex: 1;
+      max-width: 400px;
+      background: rgba(255, 255, 255, 0.1);
       padding: 40px;
       border-radius: 20px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-      width: 350px;
-      text-align: center;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3);
+      color: navy;
     }
 
-    h2 {
+    .login-container h2 {
+      text-align: center;
       margin-bottom: 25px;
-      color: #333;
+      font-weight: 600;
+      color: navy;
     }
 
     input[type="text"],
@@ -40,62 +92,114 @@
       width: 100%;
       padding: 12px;
       margin: 10px 0;
-      border: 1px solid #ccc;
+      border: none;
       border-radius: 10px;
       font-size: 16px;
+      background-color: rgba(255, 255, 255, 0.8);
+      color: #333;
+      outline: none;
     }
 
     button {
       width: 100%;
       padding: 12px;
       border: none;
-      background-color: #065f0d;
+      background-color: #0b306d;
       color: white;
       font-size: 16px;
       border-radius: 10px;
       cursor: pointer;
       transition: 0.3s;
+      margin-top: 10px;
     }
 
     button:hover {
-      background-color: #0c0d0e;
-      color: white;
+      background-color: #1fbfdf;
+      transform: translateY(-2px);
     }
 
     .error {
-      color: red;
+      color: #ffdddd;
       margin-top: 10px;
+      text-align: center;
       font-size: 14px;
     }
 
-   .back-btn {
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #2e7d32;
-  color: white;
-  padding: 10px 25px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 600;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
+    /* 🔙 Back Button */
+    .back-btn {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #09336d5a;
+      color: white;
+      padding: 10px 25px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      transition: 0.3s ease;
+    }
 
-.back-btn:hover {
-  background-color: #1b5e20;
-  transform: translate(-50%, -3px);
-}
+    .back-btn:hover {
+      background-color: #5a83957c;
+      transform: translate(-50%, -3px);
+    }
 
+    @media (max-width: 900px) {
+      body {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .info-panel {
+        max-width: 100%;
+        padding: 0;
+        align-items: center;
+      }
+
+      .login-container {
+        width: 100%;
+        max-width: 350px;
+        margin-top: 30px;
+      }
+    }
   </style>
 </head>
 
 <body>
 
+  <!-- Left Info Section -->
+  <div class="info-panel">
+    <h2>Providence Girls’ Higher Secondary School</h2>
 
+    <div class="info-item">
+      <i class="fas fa-envelope"></i>
+      <a href="mailto:providencecalicut@gmail.com">providencecalicut@gmail.com</a>
+    </div>
+
+    <div class="info-item">
+      <i class="fas fa-phone"></i>
+      <a href="tel:+914952389061">+91 495 2389061</a>
+    </div>
+
+    <div class="info-item">
+      <i class="fas fa-location-dot"></i>
+      <span>Calicut, Kerala, India</span>
+    </div>
+
+    <div class="info-item">
+      <i class="fab fa-whatsapp"></i>
+      <a href="https://wa.me/9194952389061" target="_blank">Chat on WhatsApp</a>
+    </div>
+  </div>
+
+  <!-- Login Section -->
   <div class="login-container">
-    <h2>STUDENT LOGIN</h2>
+    <h2>Student Login</h2>
     <form id="loginForm" onsubmit="return validateLogin(event)">
       <input type="text" id="username" placeholder="Username" />
       <input type="password" id="password" placeholder="Password" />
@@ -105,7 +209,6 @@
   </div>
 
   <a href="../index.html" class="back-btn">← Back to Home</a>
-
 
   <script>
     function validateLogin(event) {
@@ -119,14 +222,12 @@
         return false;
       }
 
-      // Example hardcoded login (you can change this)
       if (username === "student" && password === "12345") {
-        window.location.href = "student-portal.html"; // Redirect to portal
+        window.location.href = "student-portal.html";
       } else {
         errorMsg.textContent = "Invalid username or password.";
       }
     }
   </script>
 </body>
-
 </html>

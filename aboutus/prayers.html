@@ -44,13 +44,12 @@
             display: block;
             margin: 0 auto 20px;
         }
-
     </style>
 </head>
 
 <body>
 
- <!-- 1️⃣ Announcement Bar -->
+    <!-- 1️⃣ Announcement Bar -->
     <div class="announcement-bar">
         <div class="notice-label">NOTICE BOARD</div>
         <marquee behavior="alternate" direction="left" scrollamount="8">
@@ -65,12 +64,12 @@
     </div>
 
 
-  <div id="navbar-placeholder"></div>
-<script>
-  fetch("../navbar.html")
-    .then(res => res.text())
-    .then(data => document.getElementById("navbar-placeholder").innerHTML = data);
-</script>
+    <div id="navbar-placeholder" style="position: sticky; top: 0; z-index: 1200;"></div>
+    <script>
+        fetch("../navbar.html")
+            .then(res => res.text())
+            .then(data => document.getElementById("navbar-placeholder").innerHTML = data);
+    </script>
 
 
 
@@ -296,18 +295,18 @@ Thank You, Lord, for this life I live.
 
 
 
-  <script>
-function toggleLyrics(button) {
-    const lyrics = button.nextElementSibling; // gets the <pre> right after the button
-    if (lyrics.style.display === "none" || lyrics.style.display === "") {
-        lyrics.style.display = "block";
-        button.textContent = "Hide Lyrics";
-    } else {
-        lyrics.style.display = "none";
-        button.textContent = "Show Lyrics";
-    }
-}
-</script>
+    <script>
+        function toggleLyrics(button) {
+            const lyrics = button.nextElementSibling; // gets the <pre> right after the button
+            if (lyrics.style.display === "none" || lyrics.style.display === "") {
+                lyrics.style.display = "block";
+                button.textContent = "Hide Lyrics";
+            } else {
+                lyrics.style.display = "none";
+                button.textContent = "Show Lyrics";
+            }
+        }
+    </script>
 
 
     <!-- contact -->
