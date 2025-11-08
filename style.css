@@ -1,5 +1,4 @@
 html,
-/* --- General Reset --- */
 body {
   margin: 0;
   padding: 0;
@@ -415,8 +414,6 @@ textarea:focus {
   font-weight: 500;
   margin-top: 10px;
 }
-
-/* Optional hover date highlight */
 .news-card:hover .date {
   color: #ffb400;
 }
